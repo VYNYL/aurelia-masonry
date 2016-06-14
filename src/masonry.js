@@ -1,20 +1,21 @@
 import { noView, inject, bindable } from 'aurelia-framework';
-import { Masonry } from 'masonry-layout';
+import Masonry from 'masonry-layout';
 
-@inject(Element)
 @noView
+@inject(Element)
 export class MasonryCustomAttribute {
   @bindable columnWidth;
   @bindable itemSelector;
 
   constructor(element) {
-    // let options =
-    // let mason = new Masonry(element);
-    // console.log(mason);
+    this.element = element;
   }
 
-  bind() {
-    console.log("Binding", this);
+  bind(element) {
+    let masonrySettings = {};
+    masonrySettings.columnWidth = this.columnWidth || 200;
+    masonrySettings.itemSelector = this.itemSelector || '.grid-item';
+    this.masonry = new Masonry(this.element, masonrySettings);
   }
 
 }

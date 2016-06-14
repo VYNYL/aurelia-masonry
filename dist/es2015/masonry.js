@@ -44,18 +44,23 @@ function _initializerWarningHelper(descriptor, context) {
 }
 
 import { noView, inject, bindable } from 'aurelia-framework';
-import { Masonry } from 'masonry-layout';
+import Masonry from 'masonry-layout';
 
-export let MasonryCustomAttribute = (_dec = inject(Element), _dec(_class = noView(_class = (_class2 = class MasonryCustomAttribute {
+export let MasonryCustomAttribute = (_dec = inject(Element), noView(_class = _dec(_class = (_class2 = class MasonryCustomAttribute {
 
   constructor(element) {
     _initDefineProp(this, 'columnWidth', _descriptor, this);
 
     _initDefineProp(this, 'itemSelector', _descriptor2, this);
+
+    this.element = element;
   }
 
-  bind() {
-    console.log("Binding", this);
+  bind(element) {
+    let masonrySettings = {};
+    masonrySettings.columnWidth = this.columnWidth || 200;
+    masonrySettings.itemSelector = this.itemSelector || '.grid-item';
+    this.masonry = new Masonry(this.element, masonrySettings);
   }
 
 }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'columnWidth', [bindable], {

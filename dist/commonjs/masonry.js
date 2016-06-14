@@ -11,6 +11,10 @@ var _aureliaFramework = require('aurelia-framework');
 
 var _masonryLayout = require('masonry-layout');
 
+var _masonryLayout2 = _interopRequireDefault(_masonryLayout);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _initDefineProp(target, property, descriptor, context) {
   if (!descriptor) return;
   Object.defineProperty(target, property, {
@@ -56,17 +60,22 @@ function _initializerWarningHelper(descriptor, context) {
   throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-var MasonryCustomAttribute = exports.MasonryCustomAttribute = (_dec = (0, _aureliaFramework.inject)(Element), _dec(_class = (0, _aureliaFramework.noView)(_class = (_class2 = function () {
+var MasonryCustomAttribute = exports.MasonryCustomAttribute = (_dec = (0, _aureliaFramework.inject)(Element), (0, _aureliaFramework.noView)(_class = _dec(_class = (_class2 = function () {
   function MasonryCustomAttribute(element) {
     _classCallCheck(this, MasonryCustomAttribute);
 
     _initDefineProp(this, 'columnWidth', _descriptor, this);
 
     _initDefineProp(this, 'itemSelector', _descriptor2, this);
+
+    this.element = element;
   }
 
-  MasonryCustomAttribute.prototype.bind = function bind() {
-    console.log("Binding", this);
+  MasonryCustomAttribute.prototype.bind = function bind(element) {
+    var masonrySettings = {};
+    masonrySettings.columnWidth = this.columnWidth || 200;
+    masonrySettings.itemSelector = this.itemSelector || '.grid-item';
+    this.masonry = new _masonryLayout2.default(this.element, masonrySettings);
   };
 
   return MasonryCustomAttribute;

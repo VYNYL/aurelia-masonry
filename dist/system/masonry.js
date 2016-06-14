@@ -60,20 +60,25 @@ System.register(['aurelia-framework', 'masonry-layout'], function (_export, _con
       inject = _aureliaFramework.inject;
       bindable = _aureliaFramework.bindable;
     }, function (_masonryLayout) {
-      Masonry = _masonryLayout.Masonry;
+      Masonry = _masonryLayout.default;
     }],
     execute: function () {
-      _export('MasonryCustomAttribute', MasonryCustomAttribute = (_dec = inject(Element), _dec(_class = noView(_class = (_class2 = function () {
+      _export('MasonryCustomAttribute', MasonryCustomAttribute = (_dec = inject(Element), noView(_class = _dec(_class = (_class2 = function () {
         function MasonryCustomAttribute(element) {
           _classCallCheck(this, MasonryCustomAttribute);
 
           _initDefineProp(this, 'columnWidth', _descriptor, this);
 
           _initDefineProp(this, 'itemSelector', _descriptor2, this);
+
+          this.element = element;
         }
 
-        MasonryCustomAttribute.prototype.bind = function bind() {
-          console.log("Binding", this);
+        MasonryCustomAttribute.prototype.bind = function bind(element) {
+          var masonrySettings = {};
+          masonrySettings.columnWidth = this.columnWidth || 200;
+          masonrySettings.itemSelector = this.itemSelector || '.grid-item';
+          this.masonry = new Masonry(this.element, masonrySettings);
         };
 
         return MasonryCustomAttribute;
