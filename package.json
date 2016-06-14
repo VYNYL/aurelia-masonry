@@ -62,9 +62,6 @@
     "directories": {
       "dist": "dist/amd"
     },
-    "dependencies": {
-      "masonry-layout": "^4.1.0"
-    },
     "devDependencies": {
       "aurelia-polyfills": "^1.0.0-beta.1.1.0"
     }

@@ -9,23 +9,3 @@ html, body {
 body {
   background-color: #EEF;
 }
-
-/* clearfix */
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-.grid-item {
-  float: left;
-  width: 200px;
-  display: inline-block;
-  padding: 20px;
-  border: 1px solid black;
-  margin: 20px;
-}
-
-.grid-item img {
-  max-width: 100%;
-}

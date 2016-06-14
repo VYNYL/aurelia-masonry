@@ -27,7 +27,6 @@
       "aurelia-validation": "npm:aurelia-validation@^0.8.1",
       "font-awesome": "npm:font-awesome@^4.4.0",
       "json": "github:systemjs/plugin-json@^0.1.0",
-      "masonry-layout": "npm:masonry-layout@^4.1.0",
       "systemjs/plugin-css": "github:systemjs/plugin-css@^0.1.17",
       "twbs/bootstrap": "github:twbs/bootstrap@3.3.5",
       "validate.js": "npm:validate.js@^0.9.0"
