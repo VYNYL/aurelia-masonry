@@ -1,8 +1,8 @@
 <template>
-  <div ref="masonry" class="grid" masonry>
-    <div class="grid-item" repeat.for="x of 50">
+  <div class="grid" masonry ref="masonry">
+    <div class="grid-item" repeat.for="cat of cats" ref="gridItems[$index]">
       <h1>Tile ${$index}</h1>
-      <img src="${randomCat()}">
+      <img src.bind="cat.src" css="width: ${cat.width}px; height: ${cat.height}px" onload="${imageLoaded($index)}">
     </div>
   </div>
 </template>

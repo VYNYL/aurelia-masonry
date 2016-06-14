@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 html, body {
   margin: 0;
   padding: 0;
@@ -7,8 +10,11 @@ body {
   background-color: #EEF;
 }
 
-div {
-  text-align: center;
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
 }
 
 .grid-item {
@@ -17,4 +23,9 @@ div {
   display: inline-block;
   padding: 20px;
   border: 1px solid black;
+  margin: 20px;
+}
+
+.grid-item img {
+  max-width: 100%;
 }
