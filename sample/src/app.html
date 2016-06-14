@@ -1,6 +1,8 @@
 <template>
-  <div masonry>
-    <div class="grid-item">Tile 1</div>
-    <div class="grid-item">Tile 2</div>
+  <div ref="masonry" class="grid" masonry>
+    <div class="grid-item" repeat.for="x of 50">
+      <h1>Tile ${$index}</h1>
+      <img src="${randomCat()}">
+    </div>
   </div>
 </template>

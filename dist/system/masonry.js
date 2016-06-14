@@ -81,6 +81,14 @@ System.register(['aurelia-framework', 'masonry-layout'], function (_export, _con
           this.masonry = new Masonry(this.element, masonrySettings);
         };
 
+        MasonryCustomAttribute.prototype.attached = function attached() {
+          this.masonry.layout();
+        };
+
+        MasonryCustomAttribute.prototype.layout = function layout() {
+          this.masonry.layout();
+        };
+
         return MasonryCustomAttribute;
       }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'columnWidth', [bindable], {
         enumerable: true,

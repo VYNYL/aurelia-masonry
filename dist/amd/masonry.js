@@ -83,6 +83,14 @@ define(['exports', 'aurelia-framework', 'masonry-layout'], function (exports, _a
       this.masonry = new _masonryLayout2.default(this.element, masonrySettings);
     };
 
+    MasonryCustomAttribute.prototype.attached = function attached() {
+      this.masonry.layout();
+    };
+
+    MasonryCustomAttribute.prototype.layout = function layout() {
+      this.masonry.layout();
+    };
+
     return MasonryCustomAttribute;
   }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'columnWidth', [_aureliaFramework.bindable], {
     enumerable: true,

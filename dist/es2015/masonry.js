@@ -63,6 +63,14 @@ export let MasonryCustomAttribute = (_dec = inject(Element), noView(_class = _de
     this.masonry = new Masonry(this.element, masonrySettings);
   }
 
+  attached() {
+    this.masonry.layout();
+  }
+
+  layout() {
+    this.masonry.layout();
+  }
+
 }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'columnWidth', [bindable], {
   enumerable: true,
   initializer: null

@@ -18,4 +18,12 @@ export class MasonryCustomAttribute {
     this.masonry = new Masonry(this.element, masonrySettings);
   }
 
+  attached() {
+    this.masonry.layout();
+  }
+
+  layout() {
+    this.masonry.layout();
+  }
+
 }
